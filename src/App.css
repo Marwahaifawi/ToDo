@@ -51,10 +51,13 @@
 .list-item{
   display: flex;
   margin: 20px 0;
+  justify-content: space-between;
   border: 1px solid #ccc;
   border-radius: 10px;
-  padding: 10px;
+  padding: 14px;
+  color: #ffff;
   max-height: 30px;
+  font-size: 20px;
 }
 
 .button-complete,
