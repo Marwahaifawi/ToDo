@@ -19,3 +19,5 @@ React: A JavaScript library for building user interfaces.
 
 ## Backend
 For the backend of the application, you mentioned using Express and CORS. However, as per the information provided, the project only includes the frontend implementation using React. If you wish to add a backend using Express and enable CORS, you will need to set up a separate server and handle the API requests from the React frontend.
+ ##Deployment
+You can reach the page here https://marwahaifawi.github.io/ToDo/
