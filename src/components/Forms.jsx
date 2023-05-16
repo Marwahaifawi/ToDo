@@ -6,11 +6,29 @@ const Forms = ({ input, setInput, toDo, setToDo }) => {
     setInput(event.target.value);
   };
 
-  const onFormSubmit = (event) => {
+  const onFormSubmit = async (event) => {
     event.preventDefault();
     const newToDo = { id: uuidv4(), title: input, completed: false };
-    setToDo([...toDo, newToDo]);
-    setInput("");
+
+    try {
+      const response = await fetch("http://localhost:3000/toDos", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newToDo),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setToDo([...toDo, data]);
+        setInput("");
+      } else {
+        console.log("Error: Failed to add todo item");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
